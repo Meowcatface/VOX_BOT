@@ -52,9 +52,11 @@ client.on("message", function(message) {
     }
 	else if(command == "talk")
 	{
+		message.channel.startTyping();
 		bot.ask("'"+args+"'", function (err, response) {
           message.channel.sendMessage(response)
           console.log(response)
+			message.channel.stopTyping();
 		});
 	}
 })
