@@ -54,7 +54,7 @@ client.on("message", function(message) {
 	{
 		message.channel.startTyping();
 		bot.ask("'"+args+"'", function (err, response) {
-          message.channel.sendMessage(response)
+          message.channel.reply(response)
           console.log(response)
 			message.channel.stopTyping();
 		});
